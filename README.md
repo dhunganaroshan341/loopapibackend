@@ -31,7 +31,7 @@ php artisan vendor:publish --provider="Laravel\\Sanctum\\SanctumServiceProvider"
 
 What I added now
 - Project scaffold files: README.md, SECURITY.md, DATABASE.md, ARCHITECTURE.md, docker-compose.yml, Dockerfile, .env.example
-- Basic Laravel skeleton files: `app/Models/User.php`, `app/Http/Controllers/AuthController.php`, `routes/api.php`, `routes/web.php`, `database/migrations/2026_06_06_000000_create_users_table.php` (placeholders)
+- Basic Laravel skeleton files: `app/Models/User.php`, `routes/api.php`, `routes/web.php`, `database/migrations/2026_06_06_000000_create_users_table.php` (placeholders)
 
 Next steps I can run for you
 - Install Laravel into this folder (`composer create-project`) and configure Sanctum.
