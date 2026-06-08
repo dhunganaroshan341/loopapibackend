@@ -58,13 +58,23 @@ Format for entries:
 ---
 
 ## Pending / TODOs
-
-- Implement role & permission models, middleware and migrations (in-progress)
+- Implement role & permission models, middleware and migrations (in-progress) — recommend: run `composer require spatie/laravel-permission` then `php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"` and `php artisan migrate`.
 - Add `api_clients`, `api_endpoints`, and `submissions` migrations and models
 - Implement endpoint schema validation and submission storage
 - Add API rate-limiting and usage logging
 - Add unit tests for auth and submission flows
 - CI: add GitHub Actions for tests and security scans
+
+---
+
+- Date: 2026-06-08
+  - Module: API / Categories
+  - Type: Added
+  - Description: Implemented Category model, migration, service layer (`CategoryService`), `RoleService` wrapper for Spatie checks, and `CategoryController` API endpoints with admin/owner authorization rules.
+  - Files: `app/Models/Category.php`, `database/migrations/2026_06_08_000001_create_categories_table.php`, `app/Services/CategoryService.php`, `app/Services/RoleService.php`, `app/Http/Controllers/Api/CategoryController.php`, `routes/api.php`, `app/Providers/AppServiceProvider.php`
+  - Status: in-progress
+  - Notes: Admins (role `admin`) can perform full CRUD; creators can create and view their own categories. Requires `spatie/laravel-permission` to enable role management fully. After installing Spatie, seed roles (e.g., `admin`) and assign roles to users. Run `php artisan migrate` to create the `categories` table.
+
 
 ---
 
